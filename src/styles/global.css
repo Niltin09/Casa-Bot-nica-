@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  /* Primary Colors */
+  --color-primary-darkest: #1B3F00;
+  --color-primary-dark: #283501;
+  --color-primary: #3E4C16;
+  --color-primary-mid: #566428;
+  --color-primary-olive: #6E7D41;
+  --color-primary-light: #879759;
+  --color-primary-lighter: #A2B271;
+  --color-primary-pale: #8DCE89;
+  --color-primary-pastel: #D9EAA3;
+  --color-primary-soft: #E7F980;
+  --color-primary-lightest: #F1F91F;
+
+  /* Secondary Colors */
+  --color-secondary-dark: #500C52;
+  --color-secondary: #472249;
+  --color-secondary-mid: #603961;
+  --color-secondary-muted: #7A507A;
+  --color-secondary-soft: #956693;
+  --color-secondary-light: #B081AE;
+  --color-secondary-lighter: #CC9BCA;
+  --color-secondary-pale: #EA86E6;
+  --color-secondary-pastel: #FFD6FA;
+  --color-secondary-lightest: #FFE1FA;
+
+  /* Neutral Colors */
+  --color-neutral-darkest: #181818;
+  --color-neutral-dark: #303030;
+  --color-neutral-mid: #474747;
+  --color-neutral-grey: #5E5E5E;
+  --color-neutral-medium: #777777;
+  --color-neutral-light: #919191;
+  --color-neutral-lighter: #ABABAB;
+  --color-neutral-pale: #C5C5C5;
+  --color-neutral-muted: #E2E2E2;
+  --color-neutral-soft: #F1F1F1;
+
+  /* Property Colors */
+  --color-bg: #F7F7F7;
+  --color-bg-light: #FCFCFC;
+  --color-error: #CA2C2C;
+  --color-error-light: #D66E6E;
+  --color-success: #10912A;
+  --color-success-light: #60CE76;
+  --color-warning: #C4BF28;
+  --color-warning-light: #E3E076;
+
+  /* Fonts */
+  --font-primary: 'Manrope', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-15: 60px;
+  --space-18: 72px;
+  --space-20: 80px;
+  --space-25: 100px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  background-color: var(--color-bg);
+  color: var(--color-neutral-darkest);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-secondary);
+}
+
+ul {
+  list-style: none;
+}
