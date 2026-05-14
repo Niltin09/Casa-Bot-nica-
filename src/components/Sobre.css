@@ -1,0 +1,111 @@
+.sobre {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.sobre__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.sobre__content {
+  flex: 1;
+  max-width: 560px;
+}
+
+.sobre__eyebrow {
+  font-family: var(--font-secondary);
+  font-size: 13px; font-weight: 500;
+  color: var(--color-neutral-grey);
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.sobre__title {
+  font-family: var(--font-primary);
+  font-size: 40px; font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-neutral-darkest);
+  margin-bottom: 24px;
+}
+
+.sobre__text {
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  color: var(--color-neutral-mid);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.sobre__brand {
+  color: var(--color-primary-olive);
+  font-weight: 600;
+}
+
+.sobre__features {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.sobre__feature-card {
+  flex: 1;
+  min-width: 140px;
+  background: var(--color-primary-pastel);
+  border-radius: 16px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+
+.sobre__feature-card:hover { transform: translateY(-4px); }
+.sobre__feature-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+.sobre__feature-title {
+  font-family: var(--font-secondary);
+  font-size: 13px; font-weight: 500;
+  color: var(--color-primary-dark);
+  line-height: 1.4;
+}
+
+/* Imagem do grid — usa o PNG exato do Figma */
+.sobre__image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sobre__grid-img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+  .sobre__title { font-size: 32px; }
+  .sobre__container { gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .sobre { padding: 60px 0; }
+  .sobre__container { flex-direction: column; padding: 0 20px; gap: 40px; }
+  .sobre__content { max-width: 100%; }
+  .sobre__title { font-size: 28px; }
+  .sobre__features { gap: 12px; }
+  .sobre__feature-card { min-width: 120px; }
+  .sobre__grid-img { max-width: 100%; }
+}
