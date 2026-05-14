@@ -1,0 +1,151 @@
+.kits {
+  padding: 100px 0;
+  background: var(--color-bg);
+}
+
+.kits__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.kits__eyebrow {
+  font-family: var(--font-secondary);
+  font-size: 13px; font-weight: 500;
+  color: var(--color-neutral-grey);
+  letter-spacing: 0.04em;
+  margin-bottom: 32px;
+}
+
+/* Grid: 4 cards lado a lado, centralizados (porque cada card é apenas tão
+   largo quanto a imagem que ele contém — sem bandeja cinza ao redor). */
+.kits__grid {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  height: 620px;
+  margin-bottom: 48px;
+}
+
+/* Card: largura = altura × aspect da foto default (240/800),
+   então a foto P&B encosta exatamente nas bordas do card.
+   `aspect-ratio` é sobrescrito pelas variantes abaixo. */
+.kits__card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  flex: 0 0 auto;
+  aspect-ratio: 240 / 800;
+  transition: aspect-ratio 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #dcdcdc;
+}
+
+/* Card expandido: largura = altura × aspect da foto hover (600/800). */
+.kits__card--expanded { aspect-ratio: 600 / 800; }
+
+/* Cards colapsados mantêm a aspect default — já definida no base. */
+
+/* Imagens sobrepostas
+   As PNGs default (240×800) já vêm pré-recortadas com a planta enquadrada
+   verticalmente, então `contain` encaixa pela altura e preserva a planta
+   inteira; o whitespace lateral vem da própria foto. As PNGs hover (600×800)
+   são mais largas e mostram a composição original com respiro natural. */
+.kits__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: opacity 0.45s ease;
+}
+
+.kits__img--default { opacity: 1; z-index: 1; }
+.kits__img--hover { opacity: 0; z-index: 2; }
+
+.kits__img--hidden { opacity: 0; }
+.kits__img--visible { opacity: 1; }
+
+/* Overlay escuro com texto */
+.kits__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 24px 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.kits__overlay--visible { opacity: 1; }
+
+.kits__info { width: 100%; }
+
+.kits__info-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.kits__name {
+  font-family: var(--font-primary);
+  font-size: 17px; font-weight: 700;
+  color: #fff;
+}
+
+.kits__price {
+  font-family: var(--font-primary);
+  font-size: 15px; font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.kits__desc {
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+
+/* Botão */
+.kits__action { display: flex; justify-content: center; }
+
+.kits__btn {
+  font-family: var(--font-secondary);
+  font-size: 15px; font-weight: 600;
+  color: #fff;
+  background: var(--color-secondary-dark);
+  padding: 14px 36px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.kits__btn:hover {
+  background: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(80,12,82,0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .kits__grid { height: 500px; }
+}
+
+@media (max-width: 768px) {
+  .kits { padding: 60px 0; }
+  .kits__container { padding: 0 20px; }
+  .kits__grid { flex-direction: column; height: auto; gap: 16px; }
+  .kits__card { height: 280px; flex: none !important; aspect-ratio: auto; }
+  .kits__card--expanded { height: 380px; }
+  .kits__overlay { opacity: 1; }
+  .kits__img--default { opacity: 0; }
+  .kits__img--hover { opacity: 1; }
+}
