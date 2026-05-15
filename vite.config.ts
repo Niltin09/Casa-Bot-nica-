@@ -1,8 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1]
+const productionBase = repositoryName ? `/${repositoryName}/` : '/Casa-Bot-nica-/'
+
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: mode === 'production' ? '/Casa-Bot-nica-/' : '/',
+  base: mode === 'production' ? productionBase : '/',
 }))
