@@ -1,5 +1,7 @@
 import './Hero.css';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function Hero() {
   const handleScroll = (href: string) => {
     const el = document.querySelector(href);
@@ -36,7 +38,7 @@ export default function Hero() {
 
         <div className="hero__image-wrapper">
           <div className="hero__image-glow" />
-          <img src="/hero-plant.png" alt="Planta decorativa" className="hero__image" />
+          <img src={`${baseUrl}hero-plant.png`} alt="Planta decorativa" className="hero__image" />
         </div>
       </div>
     </section>

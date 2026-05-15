@@ -1,38 +1,40 @@
 import { useState } from 'react';
 import './Kits.css';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const kits = [
   {
     id: 1,
     name: 'Kit Iniciante',
     description: 'Ideal para quem está começando no mundo das plantas.',
     price: 'R$ 79,90',
-    defaultImg: '/kit1-default.png',
-    hoverImg: '/kit1-hover.png',
+    defaultImg: `${baseUrl}kit1-default.png`,
+    hoverImg: `${baseUrl}kit1-hover.png`,
   },
   {
     id: 2,
     name: 'Kit Relaxamento',
     description: 'Perfeito para criar um ambiente leve e tranquilo.',
     price: 'R$ 99,90',
-    defaultImg: '/kit2-default.png',
-    hoverImg: '/kit2-hover.png',
+    defaultImg: `${baseUrl}kit2-default.png`,
+    hoverImg: `${baseUrl}kit2-hover.png`,
   },
   {
     id: 3,
     name: 'Kit Decoração',
     description: 'Transforme seu espaço com plantas sofisticadas.',
     price: 'R$ 149,90',
-    defaultImg: '/kit3-default.png',
-    hoverImg: '/kit3-hover.png',
+    defaultImg: `${baseUrl}kit3-default.png`,
+    hoverImg: `${baseUrl}kit3-hover.png`,
   },
   {
     id: 4,
     name: 'Kit Produtividade',
     description: 'Perfeito para quem quer mais foco e organização mental.',
     price: 'R$ 89,90',
-    defaultImg: '/kit4-default.png',
-    hoverImg: '/kit4-hover.png',
+    defaultImg: `${baseUrl}kit4-default.png`,
+    hoverImg: `${baseUrl}kit4-hover.png`,
   },
 ];
 

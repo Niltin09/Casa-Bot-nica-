@@ -1,9 +1,11 @@
 import './Sobre.css';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const features = [
-  { icon: '/icon-plant.svg',   title: 'Curadoria de plantas para iniciantes' },
-  { icon: '/icon-book.svg',    title: 'Guia completo de manutenção' },
-  { icon: '/icon-package.svg', title: 'Kits prontos e fáceis de cuidar' },
+  { icon: `${baseUrl}icon-plant.svg`,   title: 'Curadoria de plantas para iniciantes' },
+  { icon: `${baseUrl}icon-book.svg`,    title: 'Guia completo de manutenção' },
+  { icon: `${baseUrl}icon-package.svg`, title: 'Kits prontos e fáceis de cuidar' },
 ];
 
 export default function Sobre() {
@@ -34,7 +36,7 @@ export default function Sobre() {
         </div>
 
         <div className="sobre__image-wrapper">
-          <img src="/grid.png" alt="Plantas e ambientes naturais" className="sobre__grid-img" />
+          <img src={`${baseUrl}grid.png`} alt="Plantas e ambientes naturais" className="sobre__grid-img" />
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Contato.css';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function Contato() {
   const [form, setForm] = useState({ nome: '', email: '', comentario: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +20,7 @@ export default function Contato() {
 
   return (
     <section id="contato" className="contato">
-      <img src="/hero-bg.png" alt="" className="contato__leaf contato__leaf--top" aria-hidden="true" />
+      <img src={`${baseUrl}hero-bg.png`} alt="" className="contato__leaf contato__leaf--top" aria-hidden="true" />
 
       <div className="contato__container">
         {/* Left: form */}
@@ -63,7 +65,7 @@ export default function Contato() {
         {/* Right: mapa + info */}
         <div className="contato__right">
           <div className="contato__map">
-            <img src="/map.png" alt="Mapa - Rua das Palmeiras, Blumenau" className="contato__map-img" />
+            <img src={`${baseUrl}map.png`} alt="Mapa - Rua das Palmeiras, Blumenau" className="contato__map-img" />
           </div>
 
           <div className="contato__address-card">
