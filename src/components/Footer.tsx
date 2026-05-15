@@ -14,6 +14,8 @@ const suporte = [
   { label: 'Termos de Compromisso', href: '#' },
 ];
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function Footer() {
   const handleScroll = (href: string) => {
     if (href.startsWith('#')) {
@@ -28,7 +30,7 @@ export default function Footer() {
         <div className="footer__container">
           {/* Logo (ícone + nome + tagline em uma única SVG) */}
           <div className="footer__brand">
-            <img src="/logo-footer.svg" alt="Casa Botânica — Plantas & Bem-Estar Natural" className="footer__logo" />
+            <img src={`${baseUrl}logo-footer.svg`} alt="Casa Botânica — Plantas & Bem-Estar Natural" className="footer__logo" />
           </div>
 
           {/* Navegação */}

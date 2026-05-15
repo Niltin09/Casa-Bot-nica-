@@ -9,6 +9,8 @@ const navLinks = [
   { label: 'Contato', href: '#contato' },
 ];
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +31,7 @@ export default function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="header__container">
         <a className="header__logo" href="#inicio" onClick={() => handleNavClick('#inicio')}>
-          <img src="/logo-icon.svg" alt="Casa Botânica" className="header__logo-icon" />
+          <img src={`${baseUrl}logo-icon.svg`} alt="Casa Botânica" className="header__logo-icon" />
           <div className="header__logo-text">
             <span className="header__logo-name">CASA BOTÂNICA</span>
             <span className="header__logo-tagline">Plantas & Bem-Estar Natural</span>
